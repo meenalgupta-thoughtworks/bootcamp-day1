@@ -6,12 +6,22 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RectangleTest {
 
+    final static Double LENGTH = 5.0;
+    final static Double BREADTH = 5.0;
 
     @Test
-    public void calculateRectangleArea() {
-        Rectangle rectangle = new Rectangle();
+    public void findRectangleAreaTest() {
+        final Double AREA = 25.0;
+        Rectangle rectangle = new Rectangle(LENGTH, BREADTH);
+        Double area = rectangle.area();
+        assertEquals(AREA, area);
+    }
 
-        Double area = rectangle.calculateArea(5.0, 5.0);
-        assertEquals(25.0, area);
+    @Test
+    public void findRectanglePerimeter() {
+        Rectangle rectangle = new Rectangle(LENGTH, BREADTH);
+        final Double perimeter = 20.0;
+        assertEquals(perimeter, rectangle.perimeter());
     }
 }
+
